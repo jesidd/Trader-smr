@@ -6,7 +6,7 @@
  */
 class Usuario
 {
-    private $id;
+    
     private $correo;
     private $username;
     private $password;
