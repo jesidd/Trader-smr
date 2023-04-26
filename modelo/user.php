@@ -141,6 +141,12 @@ class User{
         return $resultado;
     }
 
+    public function borrarUsuario($id){
+        $data_source = new ConectBe();
+        $resultado= $data_source->ejecutarActualizacion("DELETE FROM usuario WHERE id = :id", array('id'=>$id));
+        
+        return $resultado;
+    }
 
 }
 
