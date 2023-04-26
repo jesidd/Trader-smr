@@ -11,10 +11,14 @@ if($username && $clave && $email != null){
 
     if($usuario != null){
         header("location: ../../vista/register.html");
+    }else{
+        $errMsg .= 'The username and password were not modified.';
+        echo $errMsg;
     }
 
 }else{
-    $errMsg .= 'The username and password were not modified.';
+    $errMsg .= 'The username and password were not empty.';
+    echo $errMsg;
 }
 
 

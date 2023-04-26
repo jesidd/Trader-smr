@@ -14,6 +14,7 @@ class User{
         if(count($data_table)==1){
             foreach($data_table as $indice => $valor){
                 $usuario = new Usuario(
+                        $data_table[$indice]["id"],
                         $data_table[$indice]["usuario"],
                         $data_table[$indice]["correo"],
                         $data_table[$indice]["password"]
@@ -35,6 +36,7 @@ class User{
         if(count($data_table)==1){
             foreach($data_table as $indice => $valor){
                 $usuario = new Usuario(
+                        $data_table[$indice]["id"],
                         $data_table[$indice]["usuario"],
                         $data_table[$indice]["correo"],
                         $data_table[$indice]["password"]
@@ -67,19 +69,75 @@ class User{
         }
     }
 
+    public function buscarUsuarioPorUser($username){
+        $data_source = new ConectBe();
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM usuarios WHERE usuario = :username", 
+                                                    array(':username'=>$username));
+        $usuario=null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+                $usuario = new Usuario(
+                    $data_table[$indice]["id"],
+                    $data_table[$indice]["usuario"],
+                    $data_table[$indice]["correo"],
+                    $data_table[$indice]["password"]
+                    );
+            }
+            return $usuario;
+        }else{
+            return null;
+        }
+    }    
+
+    public function verificarExistenteExcpt($username, $correo,$id){
+        $conectbe = new ConectBe();
+
+        $data_table= $conectbe->ejecutarConsulta("SELECT * FROM usuarios WHERE id <> $id AND ( usuario = :user OR correo = :correo )", 
+                                                    array(':user'=>$username,':correo'=>$correo));
+        $usuario= null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+                $usuario = new Usuario(
+                        $data_table[$indice]["id"],
+                        $data_table[$indice]["usuario"],
+                        $data_table[$indice]["correo"],
+                        $data_table[$indice]["password"]
+                        );
+            }
+            return $usuario;
+        }else{
+            return null;
+        }
+
+    }
+
     public function modificarUsuario(Usuario $usuario){
         $data_source= new ConectBe();
-        $sql = "UPDATE usuarios SET "
-                . " usuario= :username, "
-                . "correo= :correo, "
-                . " password= :password"
-                . " WHERE usuario= $usuario->getUsername()";
-        $resultado = $data_source->ejecutarActualizacion($sql, array(
-                ':username'=>$usuario->getUsername(),
-                ':correo'=>$usuario->getCorreo(),
-                ':password'=>$usuario->getPassword()
-            )
-        );
+        session_start();
+
+        //$usuarioFirst = $this->buscarUsuarioPorUser($usuario->getUsername());$usuarioFirst->getId()
+        $id = $_SESSION['id'];
+        $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$id);
+
+        if($iguales == null){
+            $sql = "UPDATE usuarios SET "
+            . " usuario= :username, "
+            . " correo= :correo, "
+            . " password= :password"
+            . " WHERE id= :id";
+            $resultado = $data_source->ejecutarActualizacion($sql, array(
+            ':username'=>$usuario->getUsername(),
+            ':correo'=>$usuario->getCorreo(),
+            ':password'=>$usuario->getPassword(),
+            ':id'=>$id
+              )
+            );
+        }else{
+            $errMsg .='ya se encuentra registrado el correo o el usuario intente con otro diferente';
+            echo $errMsg;
+            $resultado = null;
+        }
+
         return $resultado;
     }
 

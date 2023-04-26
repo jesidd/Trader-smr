@@ -10,14 +10,14 @@
 
     function insertarUsuario($username,$correo,$pass){
         $ob=new User();
-        $usuario=new Usuario($username,$correo,$pass);
+        $usuario=new Usuario("",$username,$correo,$pass);
         $resultado=$ob->insertarUsuario($usuario);
         return $resultado;
     }
     
     function modificarUsuario($username,$correo,$pass){
         $ob=new User();
-        $usuario=new Usuario($username,$correo,$pass);
+        $usuario=new Usuario("",$username,$correo,$pass);
         $resultado=$ob->modificarUsuario($usuario);
         return $resultado;
     }

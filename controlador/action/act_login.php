@@ -1,6 +1,4 @@
 <?php
-    
-    session_start();
     include '../mdb/mdbUsuario.php';
 
     $username = $_POST['user'];
@@ -15,7 +13,10 @@
         echo $username;
 
        if($usuario != null){ // Puede iniciar sesión
+           session_start();
+           $_SESSION['id'] = $usuario->getId();
             $_SESSION['NOMBRE_USUARIO'] = $usuario->getUsername();
+            $_SESSION['correo'] = $usuario->getCorreo();
             header("Location: ../../index.html");
             
        }else{ // No puede iniciar sesión

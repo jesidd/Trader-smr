@@ -6,19 +6,29 @@
  */
 class Usuario
 {
-    
+    private $id;
     private $correo;
     private $username;
     private $password;
 
-    public function __construct( $user, $correo, $password){
-        
+    public function __construct($id, $user, $correo, $password){
+        $this->id = $id;
         $this->correo = $correo;
         $this->username = $user;
         $this->password = $password;
     }
     
-    
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
 
     public function setUsername($user)
     {
