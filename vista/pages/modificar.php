@@ -99,33 +99,33 @@
 	</script>
 	<script src="./js/main.js"></script>
 
-<?php
-	if(isset($_SESSION['login'])){
-		$msg = $_SESSION['login'];
-		$icon = 'success';
-		$time = 3000;
-	}else{
-		if(isset($_SESSION['error'])){
-			$msg = $_SESSION['error'];
-			$icon = 'error';
-			$time = 4000;
+	<?php
+		if(isset($_SESSION['login'])){
+			$msg = $_SESSION['login'];
+			$icon = 'success';
+			$time = 3000;
+		}else{
+			if(isset($_SESSION['error'])){
+				$msg = $_SESSION['error'];
+				$icon = 'error';
+				$time = 4000;
+			}
 		}
-	}
-?>
+	?>
 
-	<script>
-			Swal.fire({
-				position: 'center-center',
-				icon: '<?php echo $icon ?>',
-				title: '<?php echo $msg ?>',
-				showConfirmButton: false,
-				timer: <?php echo $time ?>
-			})
-	</script>
+		<script>
+				Swal.fire({
+					position: 'center-center',
+					icon: '<?php echo $icon ?>',
+					title: '<?php echo $msg ?>',
+					showConfirmButton: false,
+					timer: <?php echo $time ?>
+				})
+		</script>
 
-<?php
-	unset($_SESSION['login']);
-	unset($_SESSION['error']);
-?>
+	<?php
+		unset($_SESSION['login']);
+		unset($_SESSION['error']);
+	?>
 </body>
 </html>

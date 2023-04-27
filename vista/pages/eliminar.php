@@ -1,3 +1,15 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['NOMBRE_USUARIO'])){
+        echo 'debes iniciar seccion';
+        session_destroy();
+        die();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -71,7 +83,7 @@
 			</div>
 			<div class="form-group">
 				<label for="confirm-password">Confirmar contraseña:</label>
-				<input type="password" class="form-control" id="confirm-password" name="confirm-password" value=""
+				<input type="password" class="form-control" id="confirm-password" name="password2" value=""
 					placeholder="Confirme su contraseña" required>
 			</div>
 			<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Eliminar
