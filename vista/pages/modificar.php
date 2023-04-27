@@ -56,7 +56,7 @@
 									<li><a href="">Mis mensajes</a></li>
 									<li><a href="">Ayuda</a></li>
 									<li><a href="">Configuración</a></li>
-									<li><a href="">Cerrar sesión</a></li>
+									<li><a href="../../controlador/action/act_logout.php">Cerrar sesión</a></li>
 								</ul>
 							</div>
 						</div>
