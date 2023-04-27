@@ -125,6 +125,7 @@
 
 <?php
 	unset($_SESSION['login']);
+	unset($_SESSION['error']);
 ?>
 </body>
 </html>

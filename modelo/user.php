@@ -163,8 +163,6 @@ class User{
         $data_source = new ConectBe();
 
         $userEncontrado = $this->buscarUsuarioPorId($usuario->getId());
-        
-        echo $userEncontrado->getUsername() . $usuario->getUsername();
 
         if($userEncontrado->getUsername() == $usuario->getUsername()){
 
@@ -176,14 +174,12 @@ class User{
               )
             );
             }else{
-                $errMsg .='contraseña incorrecta';
-                echo $errMsg;
+                $errMsg ='contraseña incorrecta';
                 return null;
             }
 
         }else{
-            $errMsg .='nombre de usuario incorrecto';
-            echo $errMsg;
+            $errMsg ='nombre de usuario incorrecto';
             return null;
         }
         
