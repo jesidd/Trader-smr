@@ -137,7 +137,7 @@ class User{
 
         //$usuarioFirst = $this->buscarUsuarioPorUser($usuario->getUsername());$usuarioFirst->getId()
         
-        $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$usuario->getId());
+        $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$usuario->getId());//verifica si los datos de confirmacion son los mismos del usuario
 
         if($iguales == null){
             $sql = "UPDATE usuarios SET "
@@ -153,8 +153,6 @@ class User{
               )
             );
         }else{
-            $errMsg .='ya se encuentra registrado el correo o el usuario intente con otro diferente';
-            echo $errMsg;
             $resultado = null;
         }
 
