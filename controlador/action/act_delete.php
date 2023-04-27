@@ -9,9 +9,11 @@
     if($usuario != null ){
         $msg .= 'se elimino el usuario correctamente';
         echo $msg;
+        header("Location: ../../index.html");
     }else{
         $errMsg .= 'No se elimino el usuario';
         echo $errMsg;
+
     }
 
 ?>

@@ -5,12 +5,16 @@
     box-sizing: border-box;
 }
 
-/*#FFC107 colo amarillo 
-#eb5227 salmon 
-esos son los del logo
+:root{
 
-#171C3D, #22274C, #0B0E26
-esos son la variacion de azules que use*/
+    --white:#fff;
+    --secondary:#FFC107;
+    --orange:#eb5227 ;
+    --blueone:#171C3D;
+    --bluetwo:#171C3D;
+    --bluetree: #0B0E26;
+    --shadow:0px 2px 0px 0px var(--secondary) ;
+}
 
 #lottieplayer{
     position: fixed;
@@ -345,3 +349,101 @@ span{
     }
 }
 
+
+.nav_right  img:hover{
+  color: var(--blueone);
+}
+.navbar{
+   
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .nav_right > ul{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav_right ul li.nr_li{
+    margin-left: 25px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+
+.navbar .nav_right ul li {
+    color: #cefffc;
+}
+
+.navbar .nav_right ul li img{
+    width: 35px;
+    vertical-align: middle;
+}
+.nav_right .nr_li a{
+    color: var(--white);
+}
+.nav_right .nr_li a:hover{
+    color: var(--blueone);
+}
+.navbar .dd_menu {
+    position: absolute;
+    right:  0px;
+    top: 70px;
+    display: flex;
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 1;
+}
+
+.navbar .dd_menu .dd_left{
+    background: var(--secondary);
+    padding: 15px 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.navbar .dd_menu .dd_left li{
+    color: #fff;
+}
+
+.navbar .dd_menu .dd_right{
+    padding: 15px 20px;
+    
+}
+.navbar .dd_menu .dd_right li{
+  color: var(--secondary);
+  font-weight: 600px;
+  
+}
+.navbar .dd_menu .dd_right a{
+    text-decoration: none;
+    color: var(--secondary);
+}
+.navbar .dd_menu .dd_right a:hover{
+    transition: .3s all;
+    color: var(--bluetree);
+}
+.navbar .dd_menu li{
+    margin-bottom: 10px;
+    color: #868686;
+}
+
+.navbar .dd_menu:before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.navbar .dd_main.active .dd_menu{
+    display: flex;
+}

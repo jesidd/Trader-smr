@@ -17,7 +17,7 @@
            $_SESSION['id'] = $usuario->getId();
             $_SESSION['NOMBRE_USUARIO'] = $usuario->getUsername();
             $_SESSION['correo'] = $usuario->getCorreo();
-            header("Location: ../../index.html");
+            header("Location: ../../vista/inicio.php");
             
        }else{ // No puede iniciar sesión
             $errMsg .= 'Username and Password are not found';

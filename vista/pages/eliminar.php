@@ -20,7 +20,7 @@
 			<div class="nav_right">
 				<ul>
 					<li class="nr_li">
-						<a href="inicio.html" class="home-icon"><i class="fas fa-home"></i></a>
+						<a href="../inicio.php" class="home-icon"><i class="fas fa-home"></i></a>
 					</li>
 
 					<li class="nr_li dd_main">
@@ -28,20 +28,21 @@
 
 						<div class="dd_menu">
 							<div class="dd_left">
-								<ul>
-									<li><i class="fa fa-th-large"></i></li>
-									<li><i class="fa fa-user"></i></li>
-									<li><i class="fas fa-envelope-open-text"></i></li>
-									<li><i class="fa fa-question"></i></li>
-									<li><i class="fas fa-cog"></i></li>
-									<li><i class="fas fa-sign-out-alt"></i></li>
-								</ul>
+							<ul>
+								<li><i class="fa fa-user"></i></li>
+								<li><i class="fa fa-th-large"></i></li>
+								<li><i  class="fa fa-pen"></i></li>
+								<li><i class="fas fa-envelope-open-text"></i></li>
+								<li><i class="fa fa-question"></i></li>
+								<li><i class="fas fa-cog"></i></li>
+								<li><i class="fas fa-sign-out-alt"></i></li>
+							</ul>
 							</div>
 							<div class="dd_right">
 								<ul>
 									<li>Username</li>
 									<li><a href="">Plataforma</a></li>
-									<li><a href="editar-perfil.html">Editar datos</a></li>
+									<li><a href="modificar.php">Editar datos</a></li>
 									<li><a href="">Mis mensajes</a></li>
 									<li><a href="">Ayuda</a></li>
 									<li><a href="">Configuración</a></li>

@@ -10,7 +10,7 @@ if($username && $clave && $email != null){
     $usuario = modificarUsuario($username,$email,$clave);
 
     if($usuario != null){
-        header("location: ../../vista/register.html");
+        header("location: ../../vista/pages/modificar.php");
     }else{
         $errMsg .= 'The username and password were not modified.';
         echo $errMsg;
