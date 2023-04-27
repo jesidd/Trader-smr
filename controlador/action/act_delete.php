@@ -7,13 +7,15 @@
     $usuario = borrarUsuario($username,$password);
 
     if($usuario != null ){
-        $msg .= 'se elimino el usuario correctamente';
-        echo $msg;
-        header("Location: ../../index.html");
+        $msg = 'se elimino el usuario correctamente';
+        session_start();
+        $_SESSION['msg']= $msg;
+        header("Location: ../../vista/pages/eliminar.php");
     }else{
-        $errMsg .= 'No se elimino el usuario';
-        echo $errMsg;
-
+        $errMsg .= 'No se elimino el usuario, contraseña o nombre de usuario incorrecto, ingrese nuevamente';
+        session_start();
+        $_SESSION['error']= $errMsg;
+        header("Location: ../../vista/pages/eliminar.php");
     }
 
 ?>

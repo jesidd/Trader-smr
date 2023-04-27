@@ -97,8 +97,44 @@
 			this.classList.toggle("active");
 		})
 	</script>
+
 	<script src="./js/main.js"></script>
-	<script></script>
+
+<?php
+	if(isset($_SESSION['msg'])){
+		$msg = $_SESSION['msg'];
+		$icon = 'success';
+		$time = 2500;
+		$location = 'window.location.href = "../../controlador/action/act_logout.php";';
+	}else{
+		if(isset($_SESSION['error'])){
+			$msg = $_SESSION['error'];
+			$icon = 'error';
+			$time = 4000;
+			$location = 'window.location.reload();';
+		}
+	}
+?>
+
+	<script>
+			Swal.fire({
+				position: 'center-center',
+				icon: '<?php echo $icon ?>',
+				title: '<?php echo $msg ?>',
+				showConfirmButton: false,
+				timer: <?php echo $time ?>
+			})
+
+			setTimeout(() => {
+				<?php echo $location ?>
+			}, 3000);
+	</script>
+
+<?php
+	unset($_SESSION['msg']);
+	unset($_SESSION['error']);
+	
+?>
 </body>
 
 </html>
