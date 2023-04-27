@@ -1,3 +1,16 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['NOMBRE_USUARIO'])){
+        echo 'debes iniciar seccion';
+        session_destroy();
+        die();
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -37,8 +50,9 @@
 							</div>
 							<div class="dd_right">
 								<ul>
+								<li>Username</li>
 									<li><a href="">Plataforma</a></li>
-									<li><a href="">Ver pefil</a></li>
+									<li><a href="editar-perfil.html">Editar datos</a></li>
 									<li><a href="">Mis mensajes</a></li>
 									<li><a href="">Ayuda</a></li>
 									<li><a href="">Configuración</a></li>

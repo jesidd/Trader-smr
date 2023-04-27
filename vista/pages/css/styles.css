@@ -108,7 +108,11 @@
 	margin-bottom: 10px;
 	color: #868686;
 }
-
+.navbar .dd_menu .dd_right li{
+  color: var(--secondary);
+  font-weight: 600px;
+  
+}
 .navbar .dd_menu:before{
 	content: "";
 	position: absolute;
