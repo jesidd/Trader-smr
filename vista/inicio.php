@@ -80,7 +80,7 @@
 									</div>
 									<div class="dd_right">
 										<ul>
-											<li>Username</li>
+											<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
 											<li><a href="">Plataforma</a></li>
 											<li><a href="./pages/modificar.php">Editar datos</a></li>
 											<li><a href="">Mis mensajes</a></li>
