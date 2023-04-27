@@ -6,8 +6,8 @@
         private $cadenaConexion;
     
         public function __construct(){
-            $this->cadenaConexion ='mysql:host=localhost;dbname=id20597129_tradersmr;charset=utf8';
-            $this->conexion = new PDO($this->cadenaConexion,'id20597129_root','#i(22*bEus?dWgzT');      
+            $this->cadenaConexion ='mysql:host=localhost;dbname=trader;charset=utf8';
+            $this->conexion = new PDO($this->cadenaConexion,'root','');      
         }
 
         public function ejecutarConsulta($sql="",$values=array()){
