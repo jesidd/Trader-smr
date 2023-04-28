@@ -14,6 +14,8 @@ if($username && $clave && $email != null){
         session_start();
         $msg = 'Se modifico correctamente';
         $_SESSION['login']=$msg;
+        $_SESSION['NOMBRE_USUARIO'] = $username;
+        $_SESSION['correo'] = $clave;
     }else{
         $errMsg .= 'No se pudo modificar, ya se encuentra registrado el correo o el usuario intente con otro diferente';
         session_start();

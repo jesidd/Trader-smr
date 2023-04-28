@@ -17,16 +17,18 @@
            $_SESSION['id'] = $usuario->getId();
             $_SESSION['NOMBRE_USUARIO'] = $usuario->getUsername();
             $_SESSION['correo'] = $usuario->getCorreo();
-            header("Location: ../../vista/inicio.php");
+            $_SESSION['go'] = 'Inicio seccion correctamente';
+            header("Location: ../../vista/register.php");
             
        }else{ // No puede iniciar sesión
-            $errMsg .= 'Username and Password are not found';
-            header("Location: ../../vista/register.html");
+            $_SESSION['error']= 'Usuario o contraseña incorrecta, intente nuevamente';
+            header("Location: ../../vista/register.php");
        }
 
     }else{ //valores vacios
         $errMsg .= 'Username and Password are not found';
-            header("Location: ../../vista/register.html");
+         $_SESSION['error']= $errMsg;
+            header("Location: ../../vista/register.php");
     }
        
        

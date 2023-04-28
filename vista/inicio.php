@@ -5,7 +5,7 @@
     if(!isset($_SESSION['NOMBRE_USUARIO'])){
         echo 'debes iniciar seccion';
         session_destroy();
-		header("Location: ../../vista/register.html");
+		header("Location: ../../vista/register.php");
         die();
     }
 

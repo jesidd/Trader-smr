@@ -87,12 +87,20 @@
       if(isset($_SESSION['msg'])){
           $msg = $_SESSION['msg'];
           $icon = 'success';
-          $time = 2500;
+          $location = 'window.location.reload();';
+          session_destroy(); 
       }else{
         if(isset($_SESSION['error'])){
             $msg = $_SESSION['error'];
             $icon = 'error';
-            $time = 2500;
+            $location = 'window.location.reload();';
+            session_destroy(); 
+        }else{
+          if(isset($_SESSION['go'])){
+            $msg = $_SESSION['go'];
+            $icon = 'success';
+            $location = 'window.location.href= "inicio.php"';
+          }
         }
       }
   ?>
@@ -105,12 +113,17 @@
       showConfirmButton: false,
       timer: 2500
     })
+
+    setTimeout(() => {
+				<?php echo $location ?>
+			}, 2600);
+
   </script>
 
   <?php
           unset($_SESSION['msg']);
-          unset($_SESSION['error']);   
-          session_destroy();  
+          unset($_SESSION['error']); 
+          unset($_SESSION['go']); 
   ?>
 </body>
 
