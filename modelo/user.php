@@ -29,7 +29,7 @@ class User{
 
     public function verificarExistente($username, $correo){
         $conectbe = new ConectBe();
-
+        
         $data_table= $conectbe->ejecutarConsulta("SELECT * FROM usuarios WHERE usuario = :user OR correo = :correo", 
                                                     array(':user'=>$username,':correo'=>$correo));
         $usuario= null;
@@ -53,7 +53,7 @@ class User{
         $data_source= new ConectBe();
 
         $iguales = $this->verificarExistente($usuario->getUsername(),$usuario->getCorreo());
-        
+
         if($iguales == null){
             $sql = "INSERT INTO usuarios (usuario, correo, password) VALUES ( :username, :correo, :password)";
             $resultado = $data_source->ejecutarActualizacion($sql, array(
@@ -65,7 +65,7 @@ class User{
             return $resultado;
         }else{
             $errMsg .= 'Username and Password already existing';
-            echo $errMsg;
+            return null;
         }
     }
 

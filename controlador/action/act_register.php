@@ -1,6 +1,7 @@
 <?php
 
     include '../mdb/mdbUsuario.php';
+    
 
     $username = $_POST['usuario'];
     $email = $_POST['correo'];
@@ -10,11 +11,27 @@
         $usuario = insertarUsuario($username,$email,$clave);
 
         if($usuario != null){
-            header("location: ../../vista/register.html");
+            $msg = 'Se registro correctamente';
+            session_start();
+            $_SESSION['msg']=$msg;
+        }else{
+            $errMsg .= 'Registro fallido';
+            session_start();
+            $_SESSION['error']=$errMsg;
         }
-
     }else{
-        $errMsg .= 'Username and Password are not found';
+        $errMsg .= 'Registro fallido';
+        session_start();
+        $_SESSION['error']=$errMsg;
     }
 
+    header("location: ../../vista/register.php");
+
 ?>
+
+
+
+
+
+
+
