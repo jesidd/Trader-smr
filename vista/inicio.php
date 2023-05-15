@@ -47,7 +47,7 @@
 				          <li><a class="active" href="#">INICIO</a></li>
 				          <li><a href="#">OFERTAS</a></li>
 				          <li><a href="#">VENDER</a></li>
-				          <li><a href="#">CATEGORIAS</a></li>
+				          <li><a href="pages/categorias.html">CATEGORIAS</a></li>
 				          <li><a href="#">TODO</a></li>
 						</ul>
 					</div>

@@ -1,0 +1,67 @@
+:root{
+
+    --white:#fff;
+    --secondary:#FFC107;
+    --orange:#eb5227 ;
+    --blueone:#171C3D;
+    --bluetwo:#171C3D;
+    --bluetree: #0B0E26;
+    --shadow:0px 2px 0px 0px var(--secondary) ;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(to right, #171C3D, #22274C, #0B0E26);
+    left: 0;
+    top: 0;
+    
+}
+
+
+
+.hero{
+  position: relative;
+  width: 100%;
+  height: calc(50vh - 50px);
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  transition: all .7s ease-in-out;
+  animation: hero 25s infinite linear;
+  background-image: url(http://ya.co.ve/8lf2a); 
+  overflow: hidden;
+}
+
+@keyframes hero{
+  0%{
+    background-image: url(http://ya.co.ve/8lf2a);
+    background-size: cover;
+  }
+  25%{
+    background-image: url(http://ya.co.ve/8lf2a);
+    background-size: cover;
+  }
+  26%{
+    background-image: url(http://ya.co.ve/uohji);
+    background-size: cover;
+  }
+  50%{
+    background-image: url(http://ya.co.ve/uohji)
+    background-size: cover;
+  }
+  51%{
+    background-image: url(http://ya.co.ve/u2stl);
+    background-size: cover;
+  }
+  75%{
+    background-image: url(http://ya.co.ve/u2stl);
+    background-size: cover;
+  }
+  76%{
+    background-image: url(http://ya.co.ve/h31lj);
+    background-size: cover;
+  }
+  100%{
+    background-image: url(http://ya.co.ve/h31lj);
+    background-size: cover;
+  }
+}

@@ -1,0 +1,47 @@
+.hero{
+  position: relative;
+  width: 100%;
+  height: calc(50vh - 50px);
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  transition: all .7s ease-in-out;
+  animation: hero 25s infinite linear;
+  background-image: url(http://ya.co.ve/ad26f); 
+  overflow: hidden;
+}
+
+@keyframes hero{
+  0%{
+    background-image: url(http://ya.co.ve/ad26f);
+    background-size: cover;
+  }
+  25%{
+    background-image: url(http://ya.co.ve/ad26f);
+    background-size: cover;
+  }
+  26%{
+    background-image: url(http://ya.co.ve/aowdm);
+    background-size: cover;
+  }
+  50%{
+    background-image: url(http://ya.co.ve/aowdm);
+    background-size: cover;
+  }
+  51%{
+    background-image: url(http://ya.co.ve/c8suu);
+    background-size: cover;
+  }
+  75%{
+    background-image: url(http://ya.co.ve/c8suu);
+    background-size: cover;
+  }
+  76%{
+    background-image: url(http://ya.co.ve/hj9fq);
+    background-size: cover;
+  }
+  100%{
+    background-image: url(http://ya.co.ve/hj9fq);
+    background-size: cover;
+  }
+}

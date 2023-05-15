@@ -15,7 +15,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/styles2.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<link rel="icon" type="favicon" href="img/favicon.ico">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -35,25 +35,29 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="img/profile_pic.png" alt="profile_img">
+						<img src="http://ya.co.ve/jopo0" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
-							<ul>
-								<li><i class="fa fa-user"></i></li>
-								<li><i class="fa fa-th-large"></i></li>
-								<li><i  class="fa fa-pen"></i></li>
-								<li><i class="fas fa-envelope-open-text"></i></li>
-								<li><i class="fa fa-question"></i></li>
-								<li><i class="fas fa-cog"></i></li>
-								<li><i class="fas fa-sign-out-alt"></i></li>
-							</ul>
+								<ul>
+									<li><i class="fa fa-user"></i></li>
+									<li><i class="fa fa-th-large"></i></li>
+									<li><i  class="fa fa-pen"></i></li>
+									<li><i class="fa fa-heart"></i></li>
+									<li><i class="fa fa-store"></i></li>
+									<li><i class="fas fa-envelope-open-text"></i></li>
+									<li><i class="fa fa-question"></i></li>
+									<li><i class="fas fa-cog"></i></li>
+									<li><i class="fas fa-sign-out-alt"></i></li>
+								</ul>
 							</div>
 							<div class="dd_right">
 								<ul>
 								<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
 									<li><a href="">Plataforma</a></li>
-									<li><a href="#">Editar datos</a></li>
+									<li><a href="modificar.php">Ver pefil</a></li>
+									<li><a href="">Mis favoritos</a></li>
+									<li><a href="">Mis compras</a></li>
 									<li><a href="">Mis mensajes</a></li>
 									<li><a href="">Ayuda</a></li>
 									<li><a href="">Configuración</a></li>
