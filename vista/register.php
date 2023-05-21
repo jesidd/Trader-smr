@@ -1,3 +1,8 @@
+<?php 
+  session_start();
+  error_reporting(E_ALL & ~E_NOTICE);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,7 +36,8 @@
           <div class="social-media">
             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+            <?php include ('../controlador/action/act_loginGoogle.php') ?>
+            <a href="<?php echo $client->createAuthUrl() ?>" class="social-icon"><i class="fab fa-google"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </form>
@@ -54,7 +60,7 @@
           <div class="social-media">
             <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+            <a href="<?php echo $client->createAuthUrl() ?>" class="social-icon"><i class="fab fa-google"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </form>
@@ -83,7 +89,6 @@
   <script src="js/register.js"></script>
 
   <?php
-      session_start();
       if(isset($_SESSION['msg'])){
           $msg = $_SESSION['msg'];
           $icon = 'success';
