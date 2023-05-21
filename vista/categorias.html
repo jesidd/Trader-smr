@@ -1,78 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
-	<link href="css/categorias.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-	<title>Categorias</title>
-</head>
-<body>
+	<head> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keyword" content="compras,tecnologia,vehiculos,ofertas,calzado,calidad">
+		<link href="css/index.css" rel="stylesheet" type="text/css">
+		<link href="css/categorias.css" rel="stylesheet" type="text/css">
+		<link href="css/card.css" rel="stylesheet" type="text/css">
+		<link href="css/info.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<script src="vista/js/loading.js"></script>
+		<script src="vista/js/inicio.js"></script>
+		<link rel="icon" type="favicon" href="vista/img/favicon.ico">
+		<title>TraderSMR - Compras e intercambios</title>
+	</head>
 
-	<div class="wrapper">
-		<div class="navbar">
-			<div class="logo">
-				<a href="#"> <img src="http://ya.co.ve/1vv8o"></a>
+	<body>				
+		<header>
+			<div class="container2">
+				<div class="logo">
+					<a href="../index.html"><img src="./img/logo.png"  alt="TraderSMR">
+				</div>
+				<nav class="menu">
+					<div class="menuopcion">
+						<ul>
+				          <li><a href="../index.html">INICIO</a></li>
+				          <li><a href="#">OFERTAS</a></li>
+				          <li><a href="#">VENDER</a></li>
+				          <li><a class="active" href="#">CATEGORIAS</a></li>
+				          <li><a href="#">TODO</a></li>
+						</ul>
+					</div>
+					<div class="search-bar">
+						<input type="text" placeholder="Buscar productos...">
+						 <div class="btn2">
+	        				<i class="fa fa-search"></i>
+	      				 </div>
+					</div>
+					<div class="icons">
+						<a href="#"><i class="fa fa-heart"></i></a>
+						<a href="#"><i class="fa fa-shopping-cart"></i></a>
+						<a href="register.php"><i  class="fa fa-user"></i></a>
+					</div>
+				</nav>
 			</div>
-			<div class="nav_right">
-				<ul>
-					<ul class="opcionmenu">
-					<li><a href="../../vista/inicio.php">INICIO</a></li>
-					<li><a href="#">OFERTAS</a></li>
-					<li><a href="#">VENDER</a></li>
-					<li><a class="active" href="categorias.html">CATEGORIAS</a></li>
-					<li><a href="#">TODO</a></li>
-					</ul>
-					
-					<li class="nr_li">
-						<i class="fa fa-search"></i>
-					</li>
-					
-					<li class="nr_li dd_main">
-						<img src="http://ya.co.ve/jopo0" alt="profile_img">
-						
-						<div class="dd_menu">
-							<div class="dd_left">
-								<ul>
-									<li><i class="fa fa-user"></i></li>
-									<li><i class="fa fa-th-large"></i></li>
-									<li><i  class="fa fa-pen"></i></li>
-									<li><i class="fa fa-heart"></i></li>
-									<li><i class="fa fa-store"></i></li>
-									<li><i class="fas fa-envelope-open-text"></i></li>
-									<li><i class="fa fa-question"></i></li>
-									<li><i class="fas fa-cog"></i></li>
-									<li><i class="fas fa-sign-out-alt"></i></li>
-								</ul>
-							</div>
-							<div class="dd_right">
-								<ul>
-									<li>Username</li>
-									<li><a href="">Plataforma</a></li>
-									<li><a href="modificar.php">Ver pefil</a></li>
-									<li><a href="">Mis favoritos</a></li>
-									<li><a href="">Mis compras</a></li>
-									<li><a href="">Mis mensajes</a></li>
-									<li><a href="">Ayuda</a></li>
-									<li><a href="">Configuración</a></li>
-									<li><a href="../../controlador/action/act_logout.php">Cerrar sesión</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					
-				</ul>
-			</div>
-		</div>
-	</div>	
+		</header>
 
-	<section class="hero">
+		<section class="hero">
 		<div class="banner-contain">
 			<a href="#OFERTAS">Comprar</a>
 		</div>
-	</section>
+		</section>
 
 	<section class="categorias">
 		<div class="container">
@@ -231,14 +215,15 @@
 				</li>
 			</div>
 		</section>
+		
 
-<script>
-	var dd_main = document.querySelector(".dd_main");
+		<!--Scripts no tocar-->
+		
+		<script src="vista/js/carrusel2.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script src="vista/js/carruself.js"></script>
+	</body>
 
-	dd_main.addEventListener("click", function(){
-		this.classList.toggle("active");
-	})
-</script>
 	<footer>
 		<div class="container__redes">
 			<div class="iconos__redes">
@@ -254,8 +239,8 @@
 			<span class="texto__derechos">TraderSMR de
 				Colombia S.A. Calle 99 11A-32 Santa Marta Colombia  Teléfono: Santa Marta 00000 Mail: servicioalcliente@tradersmr.com.co
 			</span>
-			<span class="texto__derechoss"><img src="../../vista/img/norton.svg" alt="Logo de norton empresa de cyberseguridad" class="img-norton">COMPRA 100% SEGURA</span>
+			<span class="texto__derechoss"><img src="../vista/img/norton.svg" alt="Logo de norton empresa de cyberseguridad" class="img-norton">COMPRA 100% SEGURA</span>
 		</div> 
 	</footer>
-</body>
+
 </html>

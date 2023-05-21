@@ -23,7 +23,12 @@ body {
     width: 100%;
     height: 100vh;
 }
-
+.categorias2{
+    position: relative;
+    background: linear-gradient(to right, #171C3D, #22274C, #0B0E26);
+    width: 100%;
+    height: 70vh;
+}
 
 /*Caja de usuario*/
 
@@ -169,7 +174,7 @@ body {
 .calidad__img{
     width: 60px;
     height: 55px;
-    background-image: url(http://ya.co.ve/w9n3k);
+    background-image: url('../../img/Calidad.png');
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -177,7 +182,7 @@ body {
 .seguridad__img{
     width: 60px;
     height: 55px;
-    background-image: url(http://ya.co.ve/qa0dk);
+    background-image: url('../../img/seguridad.png');
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -185,7 +190,7 @@ body {
 .envios__img{
     width: 60px;
     height: 55px;
-    background-image: url(http://ya.co.ve/1dpf4);
+    background-image: url('../../img/envios.png');
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -267,6 +272,8 @@ footer{
 
 .icons{
     font-size: 25px;
+    color: white;
+    padding: 07px;
 }
 
 .redes__enlace{

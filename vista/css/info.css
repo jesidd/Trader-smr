@@ -25,13 +25,13 @@
     border-bottom: 1px solid gray;
 }
 
-.box{
+.sbox{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 300px;
-    height: 130px;
+    height: 150px;
     border-radius: 4px;
     background-color: #22274C;
 }
@@ -69,7 +69,8 @@
     background-repeat: no-repeat;
 }
 
-.envios__img{
+.envios__img{   
+    color: #FFC107;
     width: 60px;
     height: 55px;
     background-image: url('../img/envios.png');
@@ -154,6 +155,7 @@ footer{
 
 .icons{
     font-size: 25px;
+    color: white;
 }
 
 .redes__enlace{

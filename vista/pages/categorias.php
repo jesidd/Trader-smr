@@ -1,31 +1,40 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['NOMBRE_USUARIO'])){
+        echo 'debes iniciar seccion';
+        session_destroy();
+        die();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keyword" content="compras,joyas,categorias,ofertas,relojes,oro">
-	<link href="../css/styles.css" rel="stylesheet" type="text/css">
-	<link href="../css/categorias.css" rel="stylesheet" type="text/css">
-	<link href="../css/joyas.css" rel="stylesheet" type="text/css">
-	<link href="../css/card.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/categorias.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-	<title>Categorias-Joyas</title>
+	<title>Categorias</title>
 </head>
 <body>
+
 	<div class="wrapper">
 		<div class="navbar">
 			<div class="logo">
-				<a href="../../../vista/inicio.php"> <img src="http://ya.co.ve/1vv8o"></a>
+				<a href="../../vista/inicio.php"> <img src="../img/logo.png"></a>
 			</div>
 			<div class="nav_right">
 				<ul>
 					<ul class="opcionmenu">
-					<li><a href="../../../vista/inicio.php">INICIO</a></li>
+					<li><a href="../../vista/inicio.php">INICIO</a></li>
 					<li><a href="#">OFERTAS</a></li>
 					<li><a href="#">VENDER</a></li>
-					<li><a class="active" href="../categorias.html">CATEGORIAS</a></li>
+					<li><a class="active" href="categorias.php">CATEGORIAS</a></li>
 					<li><a href="#">TODO</a></li>
 					</ul>
 					
@@ -34,7 +43,7 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="http://ya.co.ve/jopo0" alt="profile_img">
+						<img src="../img/profileimg.png" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
@@ -52,15 +61,15 @@
 							</div>
 							<div class="dd_right">
 								<ul>
-									<li>Username</li>
+									<li><?php echo $_SESSION['NOMBRE_USUARIO'];?></li>
 									<li><a href="">Plataforma</a></li>
-									<li><a href="../modificar.php">Ver pefil</a></li>
+									<li><a href="modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>
 									<li><a href="">Mis mensajes</a></li>
 									<li><a href="">Ayuda</a></li>
 									<li><a href="">Configuración</a></li>
-									<li><a href="../../../controlador/action/act_logout.php">Cerrar sesión</a></li>
+									<li><a href="../../controlador/action/act_logout.php">Cerrar sesión</a></li>
 								</ul>
 							</div>
 						</div>
@@ -77,59 +86,105 @@
 		</div>
 	</section>
 
-	<section class="products">
-		<h2>JOYAS</h2>
-		<div class="all-products">
-			<div class="product">
-				<img src="http://ya.co.ve/c5kl7">
-				<div class="product-info">
-					<h4 class="product-title">Reloj Lige
-					</h4>
-					<p class="product-price">Precio: $229.999</p>
-					<a class="product-btn" href="#">Comprar</a>
+	<section class="categorias">
+		<div class="container">
 
-				</div>
-			</div>
-			<div class="product">
-				<img src="http://ya.co.ve/6ylac">
-				<div class="product-info">
-					<h4 class="product-title">Cadena Oro 18k
-					</h4>
-					<p class="product-price">Precio: $519.999</p>
-					<a class="product-btn" href="#">Comprar</a>
+    	<h1 class="heading">CATEGORIAS</h1>
 
-				</div>
-			</div>
-			<div class="product">
-				<img src="http://ya.co.ve/vcm2b">
-				<div class="product-info">
-					<h4 class="product-title">Juego de oro 18k
-					</h4>
-					<p class="product-price">Precio: $739.999</p>
-					<a class="product-btn" href="#">Comprar</a>
+		    <div class="box-container">
 
-				</div>
-			</div>
-			<div class="product">
-				<img src="http://ya.co.ve/gnist">
-				<div class="product-info">
-					<h4 class="product-title">Anillo Cristo 18k
-						</h4>
-					<p class="product-price">Precio: $959.999</p>
-					<a class="product-btn" href="#">Comprar</a>
+		        <div class="box">
+			    <img src="https://img.icons8.com/ios-filled/100/000000/jewelry.png"/>
+		            <h3>JOYAS</h3>
+		            <a href="./categorias/joyas.php" class="btn">Ver más</a>
+		        </div>
 
-				</div>
-			</div>
+		        <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/sneakers.png"/>
+		            <h3>ZAPATOS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+
+		        <div class="box">
+		            <img src="https://img.icons8.com/glyph-neue/100/null/user-female.png"/>
+		            <h3>DAMAS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+
+		        <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/user-male--v1.png"/>
+		            <h3>CABALLEROS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+
+		        <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/baby-feet.png"/>
+		            <h3>BEBÉS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+
+		        <div class="box">
+		            <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/100/null/external-bikini-summer-vitaliy-gorbachev-fill-vitaly-gorbachev.png"/>
+		            <h3>BIKINIS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/imac.png"/>
+		            <h3>TECNOLOGIA</h3>
+		            <a href="./categorias/tecnologia.php" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/bed.png"/>
+		            <h3>HOGAR</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/clean-hands.png"/>
+		            <h3>ASEO</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			   <div class="box">
+		            <img src="https://img.icons8.com/glyph-neue/64/null/car.png"/>
+		            <h3>VEHICULOS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+		        <div class="box">
+		           	<img src="https://img.icons8.com/ios-filled/100/null/strength.png"/>
+		            <h3>DEPORTES</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/lipstick.png"/>
+		            <h3>BELLEZA</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/service.png"/>
+		            <h3>SERVICIOS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			    <div class="box">
+		            <img src="https://img.icons8.com/glyph-neue/64/null/cottage.png"/>
+		            <h3>INMUEBLES</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+			   <div class="box">
+		            <img src="https://img.icons8.com/ios-filled/100/null/water-pipe.png"/>
+		            <h3>OTROS</h3>
+		            <a href="#" class="btn">Ver más</a>
+		        </div>
+
+		    </div>
+
 		</div>
-	</section>
 
+	</section>	
 
 	<section id="separador">
 			
-	</section>
+		</section>
 
-
-	<!--Contenido de pie de pagina-->
+		<!--Contenido de pie de pagina-->
 
 		<section class="info">
 			<div class="containerinfo">
@@ -188,7 +243,7 @@
 				</li>
 			</div>
 		</section>
-
+		<!--Scripts no tocar-->
 		<script>
 			var dd_main = document.querySelector(".dd_main");
 
@@ -211,9 +266,8 @@
 			<span class="texto__derechos">TraderSMR de
 				Colombia S.A. Calle 99 11A-32 Santa Marta Colombia  Teléfono: Santa Marta 00000 Mail: servicioalcliente@tradersmr.com.co
 			</span>
-			<span class="texto__derechoss"><img src="../../../vista/img/norton.svg" alt="Logo de norton empresa de cyberseguridad" class="img-norton">COMPRA 100% SEGURA</span>
+			<span class="texto__derechoss"><img src="../../vista/img/norton.svg" alt="Logo de norton empresa de cyberseguridad" class="img-norton">COMPRA 100% SEGURA</span>
 		</div> 
 	</footer>
-
 </body>
 </html>

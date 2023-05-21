@@ -35,14 +35,14 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="http://ya.co.ve/jopo0" alt="profile_img">
+						<img src="../img/profileimg.png" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
 								<ul>
 									<li><i class="fa fa-user"></i></li>
 									<li><i class="fa fa-th-large"></i></li>
-									<li><i  class="fa fa-pen"></i></li>
+									<li><i class="fa fa-pen"></i></li>
 									<li><i class="fa fa-heart"></i></li>
 									<li><i class="fa fa-store"></i></li>
 									<li><i class="fas fa-envelope-open-text"></i></li>
@@ -53,7 +53,7 @@
 							</div>
 							<div class="dd_right">
 								<ul>
-								<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
+									<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
 									<li><a href="">Plataforma</a></li>
 									<li><a href="modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
