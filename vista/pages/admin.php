@@ -89,7 +89,7 @@
             <!-- Añadir -->
             <div class="añadir">
                 <h2>Añadir</h2>
-                <form>
+                <form action="../../controlador/action/act_addproduct.php" method="POST">
                 	<label>Codigo del producto</label>
                     <input type="text" id="codeProducto" name="codeDelProducto">
 
@@ -100,12 +100,12 @@
                     <input type="text" id="productoAñadir" name="nombreDelProducto">
 
                     <label>$ Valor del producto</label>
-                    <input type="number" id="valorAñadir">
+                    <input type="number" id="valorAñadir" name="precio">
 
                     <label>Existencia</label>
-                    <input type="number" id="existenciaAñadir">
+                    <input type="number" id="existenciaAñadir" name="cantidad">
 
-                    <input class="button" type="button" id="botonAñadir" value="Añadir">
+                    <input class="button" type="submit" id="botonAñadir" value="Añadir">
                 </form>
             </div>
 
@@ -171,16 +171,15 @@
 			this.classList.toggle("active");
 		})
 	</script>
-	<script src="./js/main.js"></script>
 
 	<?php
-		if(isset($_SESSION['login'])){
-			$msg = $_SESSION['login'];
+		if(isset($_SESSION['add'])){
+			$msg = $_SESSION['add'];
 			$icon = 'success';
 			$time = 3000;
 		}else{
-			if(isset($_SESSION['error'])){
-				$msg = $_SESSION['error'];
+			if(isset($_SESSION['fail'])){
+				$msg = $_SESSION['fail'];
 				$icon = 'error';
 				$time = 4000;
 			}
@@ -198,8 +197,8 @@
 		</script>
 
 	<?php
-		unset($_SESSION['login']);
-		unset($_SESSION['error']);
+		unset($_SESSION['add']);
+		unset($_SESSION['fail']);
 	?>
 </body>
 </html>
