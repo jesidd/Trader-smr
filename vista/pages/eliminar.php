@@ -55,7 +55,7 @@
 							<div class="dd_right">
 								<ul>
 									<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
-									<li><a href="">Plataforma</a></li>
+									<li><a href="admin.php">Plataforma</a></li>
 									<li><a href="modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>

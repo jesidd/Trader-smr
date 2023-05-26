@@ -16,6 +16,7 @@
 	<meta charset="UTF-8">
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 	<link href="css/categorias.css" rel="stylesheet" type="text/css">
+	<link rel="icon" type="favicon" href="img/favicon.ico">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -62,7 +63,7 @@
 							<div class="dd_right">
 								<ul>
 									<li><?php echo $_SESSION['NOMBRE_USUARIO'];?></li>
-									<li><a href="">Plataforma</a></li>
+									<li><a href="admin.php">Plataforma</a></li>
 									<li><a href="modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>

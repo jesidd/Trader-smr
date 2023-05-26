@@ -21,6 +21,7 @@
 	<link href="../css/categorias.css" rel="stylesheet" type="text/css">
 	<link href="../css/tecnologia.css" rel="stylesheet" type="text/css">
 	<link href="../css/card.css" rel="stylesheet" type="text/css">
+	<link rel="icon" type="favicon" href="../img/favicon.ico">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -37,7 +38,7 @@
 					<ul class="opcionmenu">
 					<li><a href="../../../vista/inicio.php">INICIO</a></li>
 					<li><a href="#">OFERTAS</a></li>
-					<li><a href="#">VENDER</a></li>
+					<li><a href="../admin.php">VENDER</a></li>
 					<li><a class="active" href="../categorias.php">CATEGORIAS</a></li>
 					<li><a href="#">TODO</a></li>
 					</ul>
@@ -66,7 +67,7 @@
 							<div class="dd_right">
 								<ul>
 									<li><?php echo $_SESSION['NOMBRE_USUARIO'];?></li>
-									<li><a href="">Plataforma</a></li>
+									<li><a href="../admin.php">Plataforma</a></li>
 									<li><a href="../modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>

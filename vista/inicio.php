@@ -22,6 +22,7 @@
 		<link href="../vista/css/carruself.css" rel="stylesheet" type="text/css">
 		<link href="../vista/css/carrusel2.css" rel="stylesheet" type="text/css">
 		<link href="../vista/css/info.css" rel="stylesheet" type="text/css">
+		<link rel="icon" type="favicon" href="img/favicon.ico">
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -47,7 +48,7 @@
 					<ul class="opcionmenu">
 					<li><a class="active" href="#">INICIO</a></li>
 					<li><a href="#">OFERTAS</a></li>
-					<li><a href="#">VENDER</a></li>
+					<li><a href="./pages/admin.php">VENDER</a></li>
 					<li><a href="./pages/categorias.php">CATEGORIAS</a></li>
 					<li><a href="#">TODO</a></li>
 					</ul>
@@ -76,7 +77,7 @@
 							<div class="dd_right">
 								<ul>
 									<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
-									<li><a href="">Plataforma</a></li>
+									<li><a href="./pages/admin.php">Plataforma</a></li>
 									<li><a href="./pages/modificar.php">Ver perfil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>
