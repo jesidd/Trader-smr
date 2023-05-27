@@ -17,7 +17,7 @@
             session_start();
             $_SESSION['add']=$msg;
         }else{
-            $errMsg .= 'Registro fallido';
+            $errMsg .= 'ya existe producto';
             session_start();
             $_SESSION['fail']=$errMsg;
         }

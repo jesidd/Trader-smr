@@ -11,5 +11,14 @@
         return $resultado;
     }
 
+    function borrarUsuario($username,$password){
+        $ob= new User();
+        $id = $_SESSION['id'];
+
+        $usuario= new Usuario($id,$username," ",$password);
+        $resultado=$ob->borrarUsuario($usuario);
+        return $resultado;
+    }
+
 
 ?>

@@ -13,7 +13,7 @@ class product{
         $producto= null;
         if(count($data_table)==1){
             foreach($data_table as $indice => $valor){
-                $usuario = new Producto(
+                $producto = new Producto(
                         $data_table[$indice]["id_Producto"],
                         $data_table[$indice]["categoria"],
                         $data_table[$indice]["nombreP"],
@@ -45,9 +45,31 @@ class product{
             );
             return $resultado;
         }else{
-            $errMsg .= 'Username and Password already existing';
+            $errMsg .= 'Existe producto';
             return null;
         }
+    }
+
+    public function ConsultaProductos($username, $correo){
+        $conectbe = new ConectBe();
+        
+        $data_table= $conectbe->ejecutarConsulta("SELECT id FROM producto", 
+                                                    array());
+        $usuario= null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+                $usuario = new Usuario(
+                        $data_table[$indice]["id"],
+                        $data_table[$indice]["usuario"],
+                        $data_table[$indice]["correo"],
+                        $data_table[$indice]["password"]
+                        );
+            }
+            return $usuario;
+        }else{
+            return null;
+        }
+
     }
 
 
