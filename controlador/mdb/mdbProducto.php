@@ -1,6 +1,6 @@
 <?php
 
-    include '../../modelo/product.php';
+    require_once '../../modelo/product.php';
     session_start();
 
 
@@ -17,6 +17,12 @@
 
         $usuario= new Usuario($id,$username," ",$password);
         $resultado=$ob->borrarUsuario($usuario);
+        return $resultado;
+    }
+
+    function todoLosProductos(){
+        $ob=new product();
+        $resultado=$ob->todoLosProductos();
         return $resultado;
     }
 

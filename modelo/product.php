@@ -50,25 +50,24 @@ class product{
         }
     }
 
-    public function ConsultaProductos($username, $correo){
+    public function todoLosProductos(){
         $conectbe = new ConectBe();
-        
-        $data_table= $conectbe->ejecutarConsulta("SELECT id FROM producto", 
-                                                    array());
-        $usuario= null;
-        if(count($data_table)==1){
-            foreach($data_table as $indice => $valor){
-                $usuario = new Usuario(
-                        $data_table[$indice]["id"],
-                        $data_table[$indice]["usuario"],
-                        $data_table[$indice]["correo"],
-                        $data_table[$indice]["password"]
-                        );
-            }
-            return $usuario;
-        }else{
-            return null;
+    
+        $data_table = $conectbe->ejecutarConsulta("SELECT id_Producto, nombreP FROM producto", array());
+        $productos = array();
+    
+        foreach($data_table as $fila){
+            $producto = new Producto(
+                $fila["id_Producto"],
+                "",
+                $fila["nombreP"],
+                "",
+                ""
+            );
+            $productos[] = $producto;
         }
+        
+        return $productos;
 
     }
 

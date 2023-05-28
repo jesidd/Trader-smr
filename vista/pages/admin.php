@@ -1,6 +1,8 @@
 <?php
-
+	include_once '../../controlador/action/act_listartodo.php';
     session_start();
+
+	obtenerTodo();
 
     if(!isset($_SESSION['NOMBRE_USUARIO'])){
         echo 'debes iniciar seccion';
@@ -109,6 +111,8 @@
                 </form>
             </div>
 
+			<script src="./js/relacionSelect.js"></script>
+			
             <!-- Editar -->
             <div class="editar">
                 <h2>Editar</h2>
@@ -137,20 +141,21 @@
             </div>
 
             <!-- Eliminar -->
+
             <div class="eliminar">
                 <h2>Eliminar</h2>
 
-                <form>
+                <form action="../../../controlador/action/act_deleteproduct.php" method="POST">
                 	<label>Codigo del producto</label>
-                    <select id="codeEliminar">
-                        <option value=""> </option>
+                    <select id="codeEliminar" onchange="seleccionarOpcion()">
+						<?php echo listarId();?>
                     </select>
 
                     <label>Nombre del producto</label>
-                    <select id="productoEliminar">
-                        <option value=""> </option>
+                    <select id="productoEliminar" onchange="seleccionarOpcion2()">
+						<?php echo listarNombre();?>
                     </select>
-                    <input class="button" type="button" id="botonEliminar" value="Eliminar">
+                    <input class="button" type="submit" id="botonEliminar" value="Eliminar">
                 </form>
             </div>
         </div>
