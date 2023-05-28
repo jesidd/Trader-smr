@@ -71,7 +71,54 @@ class product{
 
     }
 
+    public function buscarProduct($idp){
+        $data_source = new ConectBe();
 
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM producto WHERE id_Producto = :id", 
+                                                    array(':id'=>$idp));
+        $usuario=null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+                $usuario = new Producto(
+                    $data_table[$indice]["id_Producto"],
+                    $data_table[$indice]["categoria"],
+                    $data_table[$indice]["nombreP"],
+                    $data_table[$indice]["cantidad"],
+                    $data_table[$indice]["precio"]
+                    );
+            }
+            return $usuario;
+        }else{
+            return null;
+        }
+    }   
+
+    function borrarProducto($idp, $nombrep){
+        $data_source = new ConectBe();
+
+        $productEncontrado = $this->buscarProduct($idp);
+
+        if($productEncontrado->getIdP() == $idp){
+
+            if($productEncontrado->getNombreP() == $nombrep){
+                $sql = "DELETE FROM producto "
+                . " WHERE id_Producto = :id";
+                $resultado = $data_source->ejecutarActualizacion($sql, array(
+                ':id'=>$idp
+              )
+            );
+            }else{
+                $errMsg ='El nombre del producto seleccionado no está registrado con el ID del producto.';
+                return null;
+            }
+
+        }else{
+            $errMsg ='ID del producto ingresado diferente al registrado o no existe dicho ID ';
+            return null;
+        }
+        
+        return $resultado;
+    }
 
 }
 

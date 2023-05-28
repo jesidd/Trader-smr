@@ -145,14 +145,16 @@
             <div class="eliminar">
                 <h2>Eliminar</h2>
 
-                <form action="../../../controlador/action/act_deleteproduct.php" method="POST">
+                <form action="../../controlador/action/act_deleteproduct.php" method="POST">
                 	<label>Codigo del producto</label>
-                    <select id="codeEliminar" onchange="seleccionarOpcion()">
+                    <select id="codeEliminar" onchange="seleccionarOpcion()" name="idp">
+					<option value="" disabled selected hidden></option>
 						<?php echo listarId();?>
                     </select>
 
                     <label>Nombre del producto</label>
-                    <select id="productoEliminar" onchange="seleccionarOpcion2()">
+                    <select id="productoEliminar" onchange="seleccionarOpcion2()" name="nombrep">
+					<option value="" disabled selected hidden></option>
 						<?php echo listarNombre();?>
                     </select>
                     <input class="button" type="submit" id="botonEliminar" value="Eliminar">
@@ -187,6 +189,18 @@
 				$msg = $_SESSION['fail'];
 				$icon = 'error';
 				$time = 4000;
+			}else{
+				if(isset($_SESSION['msg'])){
+					$msg = $_SESSION['msg'];
+					$icon = 'success';
+					$time = 2500;
+				}else{
+					if(isset($_SESSION['error'])){
+						$msg = $_SESSION['error'];
+						$icon = 'error';
+						$time = 2600;
+					}
+				}
 			}
 		}
 	?>
@@ -204,6 +218,8 @@
 	<?php
 		unset($_SESSION['add']);
 		unset($_SESSION['fail']);
+		unset($_SESSION['msg']);
+		unset($_SESSION['error']);
 	?>
 </body>
 </html>
