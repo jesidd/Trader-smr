@@ -1,4 +1,6 @@
 <?php
+	error_reporting(E_ALL & ~E_NOTICE);
+	ini_set('display_errors', 0);
 	include_once '../../controlador/action/act_listartodo.php';
     session_start();
 
@@ -9,6 +11,8 @@
         session_destroy();
         die();
     }
+
+	
 
 ?>
 
@@ -30,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<title>Plataforma</title>
 </head>
 <body>
@@ -95,8 +100,11 @@
                 	<label>Codigo del producto</label>
                     <input type="text" id="codeProducto" name="codeDelProducto">
 
-                	<label>Categoria del producto</label>
-                    <input type="text" id="categoriaProducto" name="categoriaDelProducto">
+					<label>Categoria del producto</label>
+                    <select id="categoriaProducto"  name="categoriaDelProducto">
+						<option value="" disabled selected hidden></option>
+						<?php echo listarCategoria();?>
+                    </select>
 
                     <label>Nombre del producto</label>
                     <input type="text" id="productoAñadir" name="nombreDelProducto">
@@ -116,27 +124,29 @@
             <!-- Editar -->
             <div class="editar">
                 <h2>Editar</h2>
-                <form>
+                <form action="../../controlador/action/act_editProduct.php" method="post">
                 	<label>Codigo del producto</label>
-                    <select id="codigoEditar">
-                        <option value=""></option>
+                    <select id="codigoEditar" onchange="buscarCategoria()" name="codigop">
+						<option value="" disabled selected hidden></option>
+						<?php echo listarId();?>
                     </select>
 
                     <label>Nombre del producto</label>
-                    <input type="text" id="productoEditar" name="editarProducto">
+                    <input type="text" id="productoEditar" name="nombrep">
 
                     <label>Categoria del producto</label>
-                    <select id="categoriaProductoEditar">
-                        <option value=""></option>
+                    <select id="categoriaProductoEditar" name="categoria">
+						<option value="" disabled selected hidden></option>
+						<?php echo listarCategoria();?>
                     </select>
 
                     <label>$ Nuevo valor</label>
-                    <input type="text" id="nuevoAtributo">
+                    <input type="text" id="nuevoAtributo" name="precio">
 
                     <label>Nueva Existencia</label>
-                    <input type="number" id="existenciaEditar">
+                    <input type="number" id="existenciaEditar" name="existencia">
 
-                    <input class="button" type="button" id="botonEditar" value="Editar">
+                    <input class="button" type="submit" id="botonEditar" value="Editar">
                 </form>
             </div>
 
@@ -148,13 +158,13 @@
                 <form action="../../controlador/action/act_deleteproduct.php" method="POST">
                 	<label>Codigo del producto</label>
                     <select id="codeEliminar" onchange="seleccionarOpcion()" name="idp">
-					<option value="" disabled selected hidden></option>
+						<option value="" disabled selected hidden></option>
 						<?php echo listarId();?>
                     </select>
 
                     <label>Nombre del producto</label>
                     <select id="productoEliminar" onchange="seleccionarOpcion2()" name="nombrep">
-					<option value="" disabled selected hidden></option>
+						<option value="" disabled selected hidden></option>
 						<?php echo listarNombre();?>
                     </select>
                     <input class="button" type="submit" id="botonEliminar" value="Eliminar">

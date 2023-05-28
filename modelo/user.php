@@ -134,8 +134,6 @@ class User{
 
     public function modificarUsuario(Usuario $usuario){
         $data_source= new ConectBe();
-
-        //$usuarioFirst = $this->buscarUsuarioPorUser($usuario->getUsername());$usuarioFirst->getId()
         
         $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$usuario->getId());//verifica si los datos de confirmacion son los mismos del usuario
 

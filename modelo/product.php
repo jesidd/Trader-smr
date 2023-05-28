@@ -53,14 +53,35 @@ class product{
     public function todoLosProductos(){
         $conectbe = new ConectBe();
     
-        $data_table = $conectbe->ejecutarConsulta("SELECT id_Producto, nombreP FROM producto", array());
+        $data_table = $conectbe->ejecutarConsulta("SELECT * FROM producto", array());
         $productos = array();
     
         foreach($data_table as $fila){
             $producto = new Producto(
                 $fila["id_Producto"],
-                "",
+                $fila["categoria"],
                 $fila["nombreP"],
+                $fila["cantidad"],
+                $fila["precio"]
+            );
+            $productos[] = $producto;
+        }
+        
+        return $productos;
+
+    }
+
+    public function todoLasCategorias(){
+        $conectbe = new ConectBe();
+    
+        $data_table = $conectbe->ejecutarConsulta("SELECT categoria FROM categorias", array());
+        $productos = array();
+    
+        foreach($data_table as $fila){
+            $producto = new Producto(
+                "",
+                $fila["categoria"],
+                "",
                 "",
                 ""
             );
@@ -93,7 +114,7 @@ class product{
         }
     }   
 
-    function borrarProducto($idp, $nombrep){
+    public function borrarProducto($idp, $nombrep){
         $data_source = new ConectBe();
 
         $productEncontrado = $this->buscarProduct($idp);
@@ -120,10 +141,32 @@ class product{
         return $resultado;
     }
 
+    
+    public function modificarProducto(Producto $producto){
+        $data_source= new ConectBe();
+
+        if($producto != null){
+            $sql = "UPDATE producto SET "
+            . " categoria= :cate, "
+            . " nombreP= :nomb, "
+            . " cantidad= :cant,"
+            ."  precio= :precio"
+            . " WHERE id_Producto= :id";
+            $resultado = $data_source->ejecutarActualizacion($sql, array(
+            ':cate'=>$producto->getCategoria(),
+            ':nomb'=>$producto->getNombreP(),
+            ':cant'=>$producto->getCant(),
+            ':precio'=>$producto->getPrecio(),
+            ':id'=>$producto->getIdP()
+            )
+            );
+        }else{
+            $resultado = null;
+        }
+
+        return $resultado;
+    }
+
 }
-
-
-
-
 
 ?>
