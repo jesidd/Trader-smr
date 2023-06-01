@@ -129,6 +129,24 @@ class User{
         }
     }    
 
+    public function obtenerRol($id){
+        $data_source = new ConectBe();
+
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :id", 
+                                                    array(':id'=>$id));
+        $usuario=null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+
+                $resultado=   $data_table[$indice]["rol"];
+  
+            }
+            return $resultado;
+        }else{
+            return null;
+        }
+    }  
+
     public function verificarExistenteExcpt($username, $correo,$id){
         $conectbe = new ConectBe();
 

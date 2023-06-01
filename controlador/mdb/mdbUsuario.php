@@ -41,5 +41,13 @@
         return $resultado;
     }
 
-
+    if(isset($_POST['peticion'])) {
+        $id = $_SESSION['id'];
+        $ob= new User();
+        $rol= $ob->obtenerRol($id);
+        unset($_POST['peticion']);
+        $_SESSION['rol']=$rol;
+        echo json_encode(array('rol' => $rol));
+    }
+    
 ?>

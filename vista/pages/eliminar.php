@@ -42,7 +42,7 @@
 							<div class="dd_left">
 								<ul>
 									<li><i class="fa fa-user"></i></li>
-									<li><i class="fa fa-th-large"></i></li>
+									<li><i class="fa fa-th-large rol_1"></i></li>
 									<li><i class="fa fa-pen"></i></li>
 									<li><i class="fa fa-heart"></i></li>
 									<li><i class="fa fa-store"></i></li>
@@ -55,7 +55,7 @@
 							<div class="dd_right">
 								<ul>
 									<li><?php echo $_SESSION['NOMBRE_USUARIO']?></li>
-									<li><a href="admin.php">Plataforma</a></li>
+									<li class="rol_1"><a href="admin.php">Plataforma</a></li>
 									<li><a href="modificar.php">Ver pefil</a></li>
 									<li><a href="">Mis favoritos</a></li>
 									<li><a href="">Mis compras</a></li>
