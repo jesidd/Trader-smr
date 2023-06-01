@@ -49,16 +49,17 @@ class User{
 
     }
 
-    public function insertarUsuario(Usuario $usuario){
+    public function insertarUsuario(Usuario $usuario,$rol){
         $data_source= new ConectBe();
 
         $iguales = $this->verificarExistente($usuario->getUsername(),$usuario->getCorreo());
 
         if($iguales == null){
-            $sql = "INSERT INTO usuarios (usuario, correo, password) VALUES ( :username, :correo, :password)";
+            $sql = "INSERT INTO usuarios (usuario, correo, password,rol) VALUES ( :username, :correo, :password,:rol)";
             $resultado = $data_source->ejecutarActualizacion($sql, array(
                 ':username'=>$usuario->getUsername(),
                 ':correo'=>$usuario->getCorreo(),
+                ':rol'=>$rol,
                 ':password'=>$usuario->getPassword()
                 )
             );

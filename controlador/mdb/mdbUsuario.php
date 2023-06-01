@@ -12,7 +12,7 @@
     function insertarUsuario($username,$correo,$pass){
         $ob=new User();
         $usuario=new Usuario("",$username,$correo,$pass);
-        $resultado=$ob->insertarUsuario($usuario);
+        $resultado=$ob->insertarUsuario($usuario,3);
         return $resultado;
     }
     
