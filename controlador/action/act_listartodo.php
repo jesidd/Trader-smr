@@ -1,6 +1,5 @@
 <?php
     require_once '../../controlador/mdb/mdbProducto.php';
-    
 
     function obtenerTodo(){
         $pds = todoLosProductos();
@@ -94,5 +93,6 @@
 
         echo json_encode(buscarCategoria($codigoSeleccionado));
     }
+
     
 ?>

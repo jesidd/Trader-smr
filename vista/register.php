@@ -116,7 +116,7 @@
       icon: '<?php echo $icon ?>',
       title: '<?php echo $msg ?>',
       showConfirmButton: false,
-      timer: 2500
+      timer: 2300
     })
 
     setTimeout(() => {

@@ -17,6 +17,11 @@
  
 }
 
+#profile-img{
+  border-radius: 50%;
+  width: 40px;
+}
+
 body {
       font-family: "Montserrat", sans-serif;
       background: linear-gradient(to right, #171C3D, #22274C, #0B0E26);

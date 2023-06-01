@@ -5,9 +5,10 @@ include '../mdb/mdbUsuario.php';
 $username = $_POST['usuario'];
 $email = $_POST['correo'];
 $clave = $_POST['password'];
+$foto = file_get_contents($_FILES['imgprofile']['tmp_name']);
 
-if($username && $clave && $email != null){
-    $usuario = modificarUsuario($username,$email,$clave);
+if($username && $clave && $email && $foto != null){
+    $usuario = modificarUsuario($username,$email,$clave,$foto);
 
     if($usuario != null){
         header("location: ../../vista/pages/modificar.php");

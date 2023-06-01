@@ -50,6 +50,11 @@ header{
 
 }
 
+#profile-img{
+    border-radius: 50%;
+    width: 40px;
+}
+
 /* Estilos barra*/
 /*Menu*/
     

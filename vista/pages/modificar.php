@@ -19,6 +19,9 @@
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<link rel="icon" type="favicon" href="img/favicon.ico">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./js/relacionSelect.js"></script>
+	<script src="./js/getfoto.js"></script>
 	<title>Usuario-informacion</title>
 </head>
 <body>
@@ -35,7 +38,7 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="../img/profileimg.png" alt="profile_img">
+						<img src="../img/profileimg.png" id="profile-img" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
@@ -72,7 +75,11 @@
 	</div>	
 	<div class="container">
 		<h2>Editar datos</h2>
-		<form method="POST" action="../../controlador/action/act_modificar.php" id="myForm"> 
+		<form method="POST" action="../../controlador/action/act_modificar.php" id="myForm" enctype="multipart/form-data"> 
+			<div class="form-group">
+					<label for="fperfil" class="fperfil">Foto de perfil</label>
+					<input type="file" name="imgprofile" class="fperfil">
+				</div>
 			<div class="form-group">
 			    <label for="username">Nombre de usuario:</label>
 			    <input type="text" class="form-control" id="username" value="" name="usuario" placeholder="Ingrese su nombre de usuario" required>

@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./js/getfoto.js"></script>
 	<title>Categorias</title>
 </head>
 <body>
@@ -44,7 +46,7 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="../img/profileimg.png" alt="profile_img">
+						<img src="../img/profileimg.png" id="profile-img" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">

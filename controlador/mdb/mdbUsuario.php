@@ -16,12 +16,19 @@
         return $resultado;
     }
     
-    function modificarUsuario($username,$correo,$pass){
+    function modificarUsuario($username,$correo,$pass,$foto){
         $ob=new User();
         $id = $_SESSION['id'];
 
         $usuario=new Usuario($id,$username,$correo,$pass);
-        $resultado=$ob->modificarUsuario($usuario);
+        $resultado=$ob->modificarUsuario($usuario,$foto);
+        return $resultado;
+    }
+
+    function obtenerFot(){
+        $ob= new User();
+        $id = $_SESSION['id'];
+        $resultado = $ob->obtenerFoto($id);
         return $resultado;
     }
 

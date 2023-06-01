@@ -5,7 +5,7 @@
     if(!isset($_SESSION['NOMBRE_USUARIO'])){
         echo 'debes iniciar seccion';
         session_destroy();
-		header("Location: ../../vista/register.php");
+		header("Location: ./register.php");
         die();
     }
 
@@ -17,7 +17,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keyword" content="compras,tecnologia,vehiculos,ofertas,calzado,calidad">
-		<link href="../vista/css/inicio.css" rel="stylesheet" type="text/css">
+		<link href="./css/inicio.css" rel="stylesheet" type="text/css">
 		<link href="../vista/css/categorias.css" rel="stylesheet" type="text/css">
 		<link href="../vista/css/carruself.css" rel="stylesheet" type="text/css">
 		<link href="../vista/css/carrusel2.css" rel="stylesheet" type="text/css">
@@ -30,8 +30,10 @@
 		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="../vista/js/loading.js"></script>
 		<script src="../vista/js/inicio.js"></script>
+		<script src="./js/getfoto.js"></script>
 		<link rel="icon" type="favicon" href="../vista/img/favicon.ico">
 		<title>TraderSMR - Compras e intercambios</title>
 	</head>
@@ -58,7 +60,7 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="img/profileimg.png" alt="profile_img">
+						<img src="img/profileimg.png" id="profile-img" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
@@ -199,8 +201,8 @@
 		</section>
 
 		<section class="carruselslider">
-			<button class="pre-btn"><img src="vista/img/arrow.png" alt=""></button>
-        	<button class="nxt-btn"><img src="vista/img/arrow.png" alt=""></button>
+			<button class="pre-btn"><img src="./img/arrow.png" alt=""></button>
+        	<button class="nxt-btn"><img src="./img/arrow.png" alt=""></button>
 			<div class="product-container">
 	            <div class="product-card">
 	                <div class="product-image">
@@ -336,8 +338,8 @@
 		</section>
 
 		<section class="carruselslider2">
-			<button class="pre-btn"><img src="vista/img/arrow.png" alt=""></button>
-        	<button class="nxt-btn"><img src="vista/img/arrow.png" alt=""></button>
+			<button class="pre-btn"><img src="./img/arrow.png" alt=""></button>
+        	<button class="nxt-btn"><img src="./img/arrow.png" alt=""></button>
 			<div class="product-container">
 	            <div class="product-card">
 	                <div class="product-image">

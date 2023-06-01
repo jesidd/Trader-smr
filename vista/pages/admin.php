@@ -1,6 +1,5 @@
 <?php
-	error_reporting(E_ALL & ~E_NOTICE);
-	ini_set('display_errors', 0);
+
 	include_once '../../controlador/action/act_listartodo.php';
     session_start();
 
@@ -35,6 +34,8 @@
         rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="./js/relacionSelect.js"></script>
+	<script src="./js/getfoto.js"></script>
 	<title>Plataforma</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
 					</li>
 					
 					<li class="nr_li dd_main">
-						<img src="../img/profileimg.png" alt="profile_img">
+						<img src="../img/profileimg.png" id="profile-img" alt="profile_img">
 						
 						<div class="dd_menu">
 							<div class="dd_left">
@@ -118,8 +119,6 @@
                     <input class="button" type="submit" id="botonAñadir" value="Añadir">
                 </form>
             </div>
-
-			<script src="./js/relacionSelect.js"></script>
 			
             <!-- Editar -->
             <div class="editar">

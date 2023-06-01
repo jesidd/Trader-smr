@@ -108,6 +108,24 @@ class User{
         }else{
             return null;
         }
+    } 
+
+    public function obtenerFoto($id){
+        $data_source = new ConectBe();
+
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM usuarios WHERE id = :id", 
+                                                    array(':id'=>$id));
+        $usuario=null;
+        if(count($data_table)==1){
+            foreach($data_table as $indice => $valor){
+
+                $resultado=   $data_table[$indice]["foto"];
+  
+            }
+            return $resultado;
+        }else{
+            return null;
+        }
     }    
 
     public function verificarExistenteExcpt($username, $correo,$id){
@@ -132,7 +150,7 @@ class User{
 
     }
 
-    public function modificarUsuario(Usuario $usuario){
+    public function modificarUsuario(Usuario $usuario,$foto){
         $data_source= new ConectBe();
         
         $iguales = $this->verificarExistenteExcpt($usuario->getUsername(),$usuario->getCorreo(),$usuario->getId());//verifica si los datos de confirmacion son los mismos del usuario
@@ -141,13 +159,15 @@ class User{
             $sql = "UPDATE usuarios SET "
             . " usuario= :username, "
             . " correo= :correo, "
-            . " password= :password"
+            . " password= :password,"
+            . " foto= :foto"
             . " WHERE id= :id";
             $resultado = $data_source->ejecutarActualizacion($sql, array(
             ':username'=>$usuario->getUsername(),
             ':correo'=>$usuario->getCorreo(),
             ':password'=>$usuario->getPassword(),
-            ':id'=>$usuario->getId()
+            ':id'=>$usuario->getId(),
+            ':foto'=>$foto
               )
             );
         }else{
